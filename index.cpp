@@ -85,3 +85,31 @@
 //     cout << word2 << endl;
 //     return 0;
 // }
+
+// #include <iostream>
+// #include <cstring>
+// using namespace std;
+
+// int main()
+// {
+//     const int SIZE = 15;
+//     char name1[SIZE];
+//     char name2[SIZE] = "C++programming";
+//     cout << name2 << endl;
+//     cout << "안녕하세요 저는" << name2;
+//     cout << "입니다. 성함이 어떻게 되나요?" << endl;
+//     cin >> name1;
+//     cout << "음," << name1 << "씨 당신의 이름은 ";
+//     cout << strlen(name1) << " 자 입니다만 \n";
+//     cout << sizeof(name1) << " 바이트 크기의 배열에 저장되군요" << endl;
+//     name2[3] = '\0';
+//     cout << "제 이름의 첫 세 글자는" << name2 << "으로 시작합니다" << endl;
+
+//     string blolb = "HERROW";
+//     cout << blolb << endl;
+
+//     return 0;
+// }
+
+// Day 3 - 3
+
