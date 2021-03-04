@@ -44,16 +44,44 @@
 // }
 
 // DAY 2 - 3
-#include <iostream>
+// #include <iostream>
 
-using namespace std;
+// using namespace std;
 
-int main()
-{
-    const float PIE = 3.14; //상수 지정 (변하지 않는 수)
+// int main()
+// {
+//     const float PIE = 3.14; //상수 지정 (변하지 않는 수)
+//     int r = 4;
+//     float s = r * r * PIE;
+//     cout << s << endl;
+//     return 0;
+// }
 
-    int r = 4;
-    float s = r * r * PIE;
-    cout << s << endl;
-    return 0;
-}
+//DAY 2 - 4
+
+// #include <iostream>
+// using namespace std;
+
+// int main(){
+//     char a = 'M';
+//     cout << int(a) << endl; // datatype(target) || (datatype)target 으로 강제적으로 데이터 타입 변경 가능
+// 아니면 static_cast<type>(target) 도 사용 가능
+//     return 0;
+// }
+
+// DAY 3 - 1
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     short listOne[] = {1, 2, 3};
+//     cout << listOne << endl;
+
+//     char word[] = {'h', 'e', 'l', 'l', 'o'};
+//     cout << word << endl;
+
+//     char word2[] = "HEOLLOW";
+//     cout << word2 << endl;
+//     return 0;
+// }
