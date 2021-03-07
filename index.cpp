@@ -113,3 +113,65 @@
 
 // Day 3 - 3
 
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     // struct Pizza
+//     // {
+//     //     string Dough;
+//     //     string Cheese;
+//     //     string Sauce;
+//     // };
+//     // Pizza Truffle = {
+//     //     "Sour",
+//     //     "Red Cheese",
+//     //     "Tomato Sauce"};
+//     // cout << Truffle.Dough << endl;
+
+//     struct PizzaRecepies
+//     {
+//         string Dough;
+//         string Cheese;
+//         string Sauce;
+//     };
+
+//     PizzaRecepies Pizzas[3] = {
+//         {"Sour", "String", "Tomato"},
+//         {"Sweet", "Wet", "Barbecue"},
+//         {"Spicy", "Dry", "Salt"},
+//     };
+//     cout << Pizzas[1].Dough << endl;
+// }
+
+// Day 4 - 1
+
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int *a;
+//     int b = 3;
+//     a = &b;
+//     cout << *a << endl;
+//     *a = *a + 1;
+//     cout << *a << endl;
+// }
+
+// DAY 5 - 1
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int *a; // a 라는 포인터 생성 됨
+//     int b = 5; // b라는 변수에 5가 저장이 됨
+//     a = &b; // a라는 포인터가 b의 메모리 위치를 가르키게 됨
+//     cout << &b << endl; // b그니까 5의 메모리 위치는 0x7ffee79269b4
+//     cout << a << endl; // a라는 포인터가 가르키고 있는 위치는 0x7ffee79269b4
+//     cout << (a + 1) << endl; //a라는 포인터가 가르키고 있는 위치에 4바이트(int) 더하면 0x7ffee79269b8
+//     cout << *(a + 1) << endl; // 포인터가 0x7ffee79269b4 가 아닌 0x7ffee79269b8를 가르킴으로 원하는 값이 없다.
+// }
+
