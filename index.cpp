@@ -224,4 +224,31 @@
 
 // }
 
+
+// DAY 6 - 1
+// #include <iostream>
+// #define SIZE 20
+// using namespace std;
+
+// int main()
+// {
+//     // int five = 5;
+//     // int *pointer = new int;
+//     // cout << five << "의 위치는?" << &five << endl;
+//     // *pointer = five;
+//     // cout << *pointer << "의 위치는?" << pointer << endl;
+//     // delete pointer;
+//     char animal[SIZE];
+//     char *pointer;
+
+//     cout << "좋아하는 동물은??" << endl;
+//     cin >> animal;
+
+//     pointer = new char[strlen(animal) + 1];
+//     strcpy(pointer, animal);
+
+//     cout << animal << "의 위치는?" << &animal << endl;
+//     cout << pointer << "의 위치는?" << (int*)pointer << endl;
+// }
+
 // https://justdoitproject.tistory.com/31
