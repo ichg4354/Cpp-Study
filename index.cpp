@@ -175,3 +175,53 @@
 //     cout << *(a + 1) << endl; // 포인터가 0x7ffee79269b4 가 아닌 0x7ffee79269b8를 가르킴으로 원하는 값이 없다.
 // }
 
+// Day 5 - 2
+// #include <iostream>
+// using namespace std;
+// int main()
+// {
+//     int *pointer = new int;
+//     cout << pointer << endl;
+//     cout << *pointer << endl;
+//     *pointer += 1;
+//     cout << pointer << endl;
+//     cout << *pointer << endl;
+//     // 포인터 ----> 값
+//     //1. 포인터가 향하는 방향을 바꾸는 법.
+//     // pointer +=1 하면 포인터가 향하는 방향이 바뀌게 됨
+//     //2. 포인터가 향하는 값을 바꾸는 법(포인터가 향하는 메모리 주소는 그대로)
+//     // *pointer += 1 하면 기존 포인터가 향하고 있던 메모리의 값만 바뀜
+// }
+
+//Day 5 - 3
+// #include <iostream>
+// using namespace std;
+
+// int main(){
+//     i
+// }
+
+//DAY 5 - 4;
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int *list = new int[3];
+//     list[0] = 1;
+//     list[1] = 2;
+//     list[2] = 3;
+//     cout << list[0] << endl;
+//     cout << list[1] << endl;
+//     cout << list[2] << endl;
+//     cout << list << endl;
+//     *list += 1;
+//     cout << "\n";
+//     cout << list[0] << endl;
+//     cout << list[1] << endl;
+//     cout << list[2] << endl;
+//     cout << list << endl;
+
+// }
+
+// https://justdoitproject.tistory.com/31
