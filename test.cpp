@@ -21,3 +21,104 @@
 
 //     cout << "\t |" << setfill('-') << setw(33) << "|" << endl;
 // }
+
+// #include <iostream>
+// #include <iomanip>
+// using namespace std;
+
+// int main()
+// {
+//     cout << "\t |"
+//          << setfill('*') << setw(15) << " "
+//          << setfill(' ') << setw(15) << "프로젝트3"
+//          << setfill(' ') << setw(4) << " "
+//          << setfill('*') << setw(15) << '|';
+// }
+
+// #include <iostream>
+// #include <iomanip>
+// using namespace std;
+
+// int main()
+// {
+//     cout << "\n|"
+//          << setiosflags(ios::left)
+//          << setw(30)
+//          << "***************"
+
+//          << setw(10)
+//          << "프로그램 3"
+
+//          << setiosflags(ios::right)
+//          << setw(30)
+//          << "***************|\n";
+// }
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+string topStar = "********************";
+float number = 30.1415;
+
+int main()
+{
+    int del = 20;
+    int width = del * 4;
+    // cout << setiosflags(ios::left)
+    //      << setw(20) << topStar
+    //      << number
+    //      << "의 출력"
+    //      << setiosflags(ios::right)
+    //      << setw(40) << topStar
+    //      << endl;
+
+    //TOP
+    cout
+        << setiosflags(ios::right)
+        << setfill('=') << setw(width + 11) << " \n";
+
+    //FIRST
+    cout << "|"
+         << setw(del + 2) << setfill(' ') << "Precision |"
+         << setw(del + 2) << setfill(' ') << "default |"
+         << setw(del + 2) << setfill(' ') << "scientific |"
+         << setw(del + 2) << setfill(' ') << "fixed |"
+         << endl;
+    cout << setfill('-') << setw(width + 11) << " \n";
+
+    //SECOND
+    cout
+        << "|"
+        << setw(del + 2) << setfill(' ') << "3 |"
+        << setprecision(3)
+        //default
+        << setw(del) << setfill(' ') << number << " |"
+        //scientific
+        << scientific
+        << setw(del) << setfill(' ') << number << " |"
+        //fixed
+        << fixed
+        << setw(del) << setfill(' ') << number << " |"
+        << endl;
+    cout << setfill('-') << setw(width + 11) << " \n";
+
+    //THIRD
+    cout << "|"
+         << defaultfloat
+         << setw(del + 2) << setfill(' ') << "5 |"
+         << setprecision(5)
+         //default
+         << setw(del) << setfill(' ') << number << " |"
+         //scientific
+         << scientific
+         << setw(del) << setfill(' ') << number << " |"
+         << fixed
+         //fixed
+         << setw(del) << setfill(' ') << number << " |"
+         << endl;
+
+    //BOTTOM
+    cout << setiosflags(ios::right)
+         << setfill('=') << setw(del * 4 + 11) << " \n";
+}
