@@ -1,1 +1,1 @@
-int*(point
+struct

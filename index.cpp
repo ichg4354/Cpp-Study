@@ -224,7 +224,6 @@
 
 // }
 
-
 // DAY 6 - 1
 // #include <iostream>
 // #define SIZE 20
@@ -250,5 +249,46 @@
 //     cout << animal << "의 위치는?" << &animal << endl;
 //     cout << pointer << "의 위치는?" << (int*)pointer << endl;
 // }
+
+// DAY 6 - 2
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     struct User
+//     {
+//         char Name[20];
+//         int Age;
+//     };
+
+//     char newName[20];
+//     int newAge;
+
+//     cout << "당신의 이름은?" << endl;
+//     cin >> newName;
+//     cout << "당신의 나이는?" << endl;
+//     cin >> newAge;
+
+//     User Luis = {
+//         newName,
+//         newAge,
+//     };
+
+//     cout << Luis.Name << endl;
+// }
+
+//TEST
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout << "HELLO WORLD" << endl;
+    return 0;
+}
+
+
 
 // https://justdoitproject.tistory.com/31
