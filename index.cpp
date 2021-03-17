@@ -280,15 +280,93 @@
 
 //TEST
 
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int *pointer;
+//     int number = 35;
+// }
+
+// #include <iostream>
+// #include <iomanip>
+// using namespace std;
+
+// int main()
+// {
+//     double pi = 30.1415;
+//     // 이경우 유효자리 수가 1이기 때문에 3이 출력되는 것이 맞음
+//     cout.precision(1);
+//     cout << pi << endl;
+
+//     // 소숫점이 1 자리를 출력하려면  fixed를 먼저 세팅해야 함
+//     cout << fixed << endl;
+//     cout.precision(1);
+//     cout << pi << endl;
+
+//     //  이 상황에서는 fixed flag이 세팅되어 있음
+//     //  fixed가 세팅된 상태에서 scientific을 세팅하면 8진수가 출력됨( 그 이유는 찾지 못함)
+//     cout << setprecision(5) << pi << endl;
+//     cout << setiosflags(ios::scientific) << pi << endl;
+
+//     // Scientific을 세팅하려면 fixed를 reset하고 세팅해야 올바른 결과가 출력됨
+//     cout << resetiosflags(ios::fixed);
+//     cout << setprecision(5);
+//     cout << setiosflags(ios::scientific) << pi << endl;
+// }
+
+// #include <iostream>
+// #include <iomanip>
+
+// using namespace std;
+
+// struct myStruct
+// {
+//     char name[20];
+//     int age;
+// };
+
+// int main()
+// {
+//     myStruct *structPointer = new myStruct;
+//     cout << "당신의 이름이 무었입니까?";
+//     cin >> (*structPointer).name;
+//     cout << endl;
+//     cout << "당신의 나이는 몇입니까?";
+//     cin >> (*structPointer).age;
+
+//     cout << "당신의 이름은" << (*structPointer).name << "이고 \n"
+//          << "당신의 나이는" << (*structPointer).age << "이네요" << endl;
+
+//     cout << structPointer->age << endl;
+//     cout << (*structPointer).age << endl;
+//     structPointer->age = 30;
+//     cout << structPointer << endl;
+// }
+
 #include <iostream>
+#include <typeinfo>
 using namespace std;
+
+enum DayOfWeek
+{
+    Monday,
+    Tuesday,
+    Wendsday,
+    Thursday,
+    Friday
+};
 
 int main()
 {
-    cout << "HELLO WORLD" << endl;
-    return 0;
+    // int a;
+    // float b;
+    // long c;
+    // long long d;
+    // cout << sizeof(a) << endl;
+    // cout << sizeof(b) << endl;
+    // cout << sizeof(c) << endl;
+    // cout << sizeof(d) << endl;
 }
-
-
-
 // https://justdoitproject.tistory.com/31

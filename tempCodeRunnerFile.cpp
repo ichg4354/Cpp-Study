@@ -1,7 +1,3 @@
-//default
-         << setw(20) << setfill(' ') << number << " |"
-         //scientific
-         << setw(20) << setfill(' ') << number << " |"
-         //fixed
-         << setw(20) << setfill(' ') << number << " |"
-         << endl;
+ cout << resetiosflags(ios::fixed);
+ cout << setprecision(5);
+ cout << setiosflags(ios::scientific) << pi << endl;
