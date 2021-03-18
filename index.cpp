@@ -345,28 +345,141 @@
 //     cout << structPointer << endl;
 // }
 
+// #include <iostream>
+// #include <typeinfo>
+// using namespace std;
+
+// enum DayOfWeek
+// {
+//     Monday,
+//     Tuesday,
+//     Wendsday,
+//     Thursday,
+//     Friday
+// };
+
+// int main()
+// {
+//     // int a;
+//     // float b;
+//     // long c;
+//     // long long d;
+//     // cout << sizeof(a) << endl;
+//     // cout << sizeof(b) << endl;
+//     // cout << sizeof(c) << endl;
+//     // cout << sizeof(d) << endl;
+// }
+
 #include <iostream>
-#include <typeinfo>
+#include <iomanip>
 using namespace std;
 
-enum DayOfWeek
-{
-    Monday,
-    Tuesday,
-    Wendsday,
-    Thursday,
-    Friday
-};
-
+int width = 20;
+string line = "*******************";
+float Pi = 30.1415;
 int main()
 {
-    // int a;
-    // float b;
-    // long c;
-    // long long d;
-    // cout << sizeof(a) << endl;
-    // cout << sizeof(b) << endl;
-    // cout << sizeof(c) << endl;
-    // cout << sizeof(d) << endl;
+    cout << '\t'
+         << setiosflags(ios::left)
+         << setw(width * 3 / 2)
+         << line
+         << Pi
+         << setw(width) << "의 출력"
+         << setiosflags(ios::right)
+         << setw(width * 3 / 2)
+         << line
+         << endl;
+
+    cout << '\t'
+         << setw(width * 4 + 5)
+         << setfill('=')
+         << "="
+         << endl;
+
+    cout << "\t"
+         << "|"
+         << setiosflags(ios::right)
+         << setw(width - 1)
+         << setfill(' ')
+         << "Precision"
+         << " |"
+         << setw(width - 1)
+         << setfill(' ')
+         << "default"
+         << " |"
+         << setw(width - 1)
+         << setfill(' ')
+         << "scientific"
+         << " |"
+         << setw(width - 1)
+         << setfill(' ')
+         << "fixed"
+         << " |"
+         << endl;
+    cout << '\t'
+         << setw(width * 4 + 5)
+         << setfill('-')
+         << "-"
+         << endl;
+    //line2
+
+    cout << "\t"
+         << "|"
+         << setiosflags(ios::right)
+         << setw(width - 1)
+         << setfill(' ')
+         << "3"
+         << " |"
+         << setw(width - 1)
+         << setfill(' ')
+         << setprecision(3)
+         << Pi
+         << " |"
+         << setw(width - 1)
+         << setfill(' ')
+         << scientific
+         << Pi
+         << " |"
+         << setw(width - 1)
+         << setfill(' ')
+         << fixed
+         << Pi
+         << " |"
+         << endl;
+    cout << '\t'
+         << setw(width * 4 + 5)
+         << setfill('-')
+         << "-"
+         << endl;
+
+    //Line 3
+    cout << "\t"
+         << "|"
+         << setiosflags(ios::right)
+         << setw(width - 1)
+         << setfill(' ')
+         << "6"
+         << " |"
+         << setw(width - 1)
+         << setfill(' ')
+         << setprecision(5)
+         << Pi
+         << " |"
+         << setw(width - 1)
+         << setfill(' ')
+         << scientific
+         << Pi
+         << " |"
+         << setw(width - 1)
+         << setfill(' ')
+         << fixed
+         << Pi
+         << " |"
+         << endl;
+    cout << '\t'
+         << setw(width * 4 + 5)
+         << setfill('-')
+         << "-"
+         << endl;
 }
 // https://justdoitproject.tistory.com/31
