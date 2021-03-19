@@ -370,116 +370,177 @@
 //     // cout << sizeof(d) << endl;
 // }
 
+// #include <iostream>
+// #include <iomanip>
+// using namespace std;
+
+// int width = 20;
+// string line = "*******************";
+// float Pi = 30.1415;
+// int main()
+// {
+//     cout << '\t'
+//          << setiosflags(ios::left)
+//          << setw(width * 3 / 2)
+//          << line
+//          << Pi
+//          << setw(width) << "의 출력"
+//          << setiosflags(ios::right)
+//          << setw(width * 3 / 2)
+//          << line
+//          << endl;
+
+//     cout << '\t'
+//          << setw(width * 4 + 5)
+//          << setfill('=')
+//          << "="
+//          << endl;
+
+//     cout << "\t"
+//          << "|"
+//          << setiosflags(ios::right)
+//          << setw(width - 1)
+//          << setfill(' ')
+//          << "Precision"
+//          << " |"
+//          << setw(width - 1)
+//          << setfill(' ')
+//          << "default"
+//          << " |"
+//          << setw(width - 1)
+//          << setfill(' ')
+//          << "scientific"
+//          << " |"
+//          << setw(width - 1)
+//          << setfill(' ')
+//          << "fixed"
+//          << " |"
+//          << endl;
+//     cout << '\t'
+//          << setw(width * 4 + 5)
+//          << setfill('-')
+//          << "-"
+//          << endl;
+//     //line2
+
+//     cout << "\t"
+//          << "|"
+//          << setiosflags(ios::right)
+//          << setw(width - 1)
+//          << setfill(' ')
+//          << "3"
+//          << " |"
+//          << setw(width - 1)
+//          << setfill(' ')
+//          << setprecision(3)
+//          << Pi
+//          << " |"
+//          << setw(width - 1)
+//          << setfill(' ')
+//          << scientific
+//          << Pi
+//          << " |"
+//          << setw(width - 1)
+//          << setfill(' ')
+//          << fixed
+//          << Pi
+//          << " |"
+//          << endl;
+//     cout << '\t'
+//          << setw(width * 4 + 5)
+//          << setfill('-')
+//          << "-"
+//          << endl;
+
+//     //Line 3
+//     cout << "\t"
+//          << "|"
+//          << setiosflags(ios::right)
+//          << setw(width - 1)
+//          << setfill(' ')
+//          << "6"
+//          << " |"
+//          << setw(width - 1)
+//          << setfill(' ')
+//          << setprecision(5)
+//          << Pi
+//          << " |"
+//          << setw(width - 1)
+//          << setfill(' ')
+//          << scientific
+//          << Pi
+//          << " |"
+//          << setw(width - 1)
+//          << setfill(' ')
+//          << fixed
+//          << Pi
+//          << " |"
+//          << endl;
+//     cout << '\t'
+//          << setw(width * 4 + 5)
+//          << setfill('-')
+//          << "-"
+//          << endl;
+// }
+
+//Day 7 - 1
+// #include <iostream>
+// #include <iomanip>
+// using namespace std;
+
+// int main()
+// {
+//      int twoDArray[2][4] = {
+//          {1, 2, 3, 4}, {5, 6, 7, 8}};
+//      for (int row = 0; row < 2; row++)
+//      {
+//           cout << '\n';
+//           for (int col = 0; col < 4; col++)
+//           {
+//                cout << twoDArray[row][col];
+//           }
+//      }
+// }
+
+//Day 7 - 2
+// #include <iostream>
+// #include <iomanip>
+// using namespace std;
+
+// int a = 5;
+// int main()
+// {
+//      switch (1)
+//      {
+//      case 1:
+//           cout << "ONE";
+//           break;
+//      case 2:
+//           cout << "TWO";
+//           break;
+
+//      default:
+//           cout << a;
+//           break;
+//      }
+// }
+
+//Day 8 - 1
 #include <iostream>
 #include <iomanip>
 using namespace std;
 
-int width = 20;
-string line = "*******************";
-float Pi = 30.1415;
+void sayHello(string text)
+{
+     cout << text << "이거 넣었어?" << endl;
+}
+
 int main()
 {
-    cout << '\t'
-         << setiosflags(ios::left)
-         << setw(width * 3 / 2)
-         << line
-         << Pi
-         << setw(width) << "의 출력"
-         << setiosflags(ios::right)
-         << setw(width * 3 / 2)
-         << line
-         << endl;
+     string Text;
+     cin >> Text;
+     sayHello(Text);
+     return 0;
+};
 
-    cout << '\t'
-         << setw(width * 4 + 5)
-         << setfill('=')
-         << "="
-         << endl;
-
-    cout << "\t"
-         << "|"
-         << setiosflags(ios::right)
-         << setw(width - 1)
-         << setfill(' ')
-         << "Precision"
-         << " |"
-         << setw(width - 1)
-         << setfill(' ')
-         << "default"
-         << " |"
-         << setw(width - 1)
-         << setfill(' ')
-         << "scientific"
-         << " |"
-         << setw(width - 1)
-         << setfill(' ')
-         << "fixed"
-         << " |"
-         << endl;
-    cout << '\t'
-         << setw(width * 4 + 5)
-         << setfill('-')
-         << "-"
-         << endl;
-    //line2
-
-    cout << "\t"
-         << "|"
-         << setiosflags(ios::right)
-         << setw(width - 1)
-         << setfill(' ')
-         << "3"
-         << " |"
-         << setw(width - 1)
-         << setfill(' ')
-         << setprecision(3)
-         << Pi
-         << " |"
-         << setw(width - 1)
-         << setfill(' ')
-         << scientific
-         << Pi
-         << " |"
-         << setw(width - 1)
-         << setfill(' ')
-         << fixed
-         << Pi
-         << " |"
-         << endl;
-    cout << '\t'
-         << setw(width * 4 + 5)
-         << setfill('-')
-         << "-"
-         << endl;
-
-    //Line 3
-    cout << "\t"
-         << "|"
-         << setiosflags(ios::right)
-         << setw(width - 1)
-         << setfill(' ')
-         << "6"
-         << " |"
-         << setw(width - 1)
-         << setfill(' ')
-         << setprecision(5)
-         << Pi
-         << " |"
-         << setw(width - 1)
-         << setfill(' ')
-         << scientific
-         << Pi
-         << " |"
-         << setw(width - 1)
-         << setfill(' ')
-         << fixed
-         << Pi
-         << " |"
-         << endl;
-    cout << '\t'
-         << setw(width * 4 + 5)
-         << setfill('-')
-         << "-"
-         << endl;
-}
 // https://justdoitproject.tistory.com/31
