@@ -526,21 +526,53 @@
 // }
 
 //Day 8 - 1
+// #include <iostream>
+// #include <iomanip>
+// using namespace std;
+
+// void sayHello(string text)
+// {
+//      cout << text << "이거 ?" << endl;
+// }
+
+// int main()
+// {
+//      string Text;
+//      cin >> Text;
+//      sayHello(Text);
+//      return 0;
+// };
+
+//Day 9 - 1;
 #include <iostream>
 #include <iomanip>
 using namespace std;
 
-void sayHello(string text)
-{
-     cout << text << "이거 넣었어?" << endl;
-}
+// int sumArr(int list[], int size)
+// {
+//      int sum = 0;
+//      for (int i = 0; i < size; i++)
+//      {
+//           sum = sum + list[i];
+//      }
+//      cout << sum;
+// }
 
 int main()
 {
-     string Text;
-     cin >> Text;
-     sayHello(Text);
+     const int size = 5;
+     int list[size] = {1,
+                       2,
+                       3,
+                       4,
+                       5};
+     int *pointer;
+     cout << list << endl;
+     cout << list + 3 << endl;
+     pointer = list + 3;
+     cout << *pointer;
+     // sumArr(list, size);
      return 0;
-};
+}
 
 // https://justdoitproject.tistory.com/31
