@@ -95,11 +95,42 @@
 //          << " and the perimeter of this rectangle is " << 2 * (width + length) << endl;
 // }
 
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     float number = 3.141592;
+//     cout << int(number) % 10 << endl;
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     for (int i = 0; i < 8; i++)
+//     {
+//         cout << "hello" << endl;
+//         for (int i = 0; i < 8; i++)
+//         {
+//             cout << "ballz" << endl;
+//         }
+//     }
+// }
+
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    float number = 3.141592;
-    cout << int(number) % 10 << endl;
+    int i = 11;
+    if (0 < i < 10)
+    {
+        cout << "TRUE";
+    }
+    else
+    {
+        cout << "FALSE";
+    }
 }
