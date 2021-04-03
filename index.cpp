@@ -544,9 +544,9 @@
 // };
 
 //Day 9 - 1;
-#include <iostream>
-#include <iomanip>
-using namespace std;
+// #include <iostream>
+// #include <iomanip>
+// using namespace std;
 
 // int sumArr(int list[], int size)
 // {
@@ -558,21 +558,44 @@ using namespace std;
 //      cout << sum;
 // }
 
+// int main()
+// {
+//      const int size = 5;
+//      int list[size] = {1,
+//                        2,
+//                        3,
+//                        4,
+//                        5};
+//      int *pointer;
+//      cout << list << endl;
+//      cout << list + 3 << endl;
+//      pointer = list + 3;
+//      cout << *pointer;
+//      // sumArr(list, size);
+//      return 0;
+// }
+
+// DAY 10-1
+#include <iostream>
+using namespace std;
+
+struct Time
+{
+     int minute;
+};
+
+void calculateTime(Time *t1, Time *t2)
+{
+     Time result;
+     result.minute = t1->minute + t2->minute;
+     cout << result.minute;
+};
+
 int main()
 {
-     const int size = 5;
-     int list[size] = {1,
-                       2,
-                       3,
-                       4,
-                       5};
-     int *pointer;
-     cout << list << endl;
-     cout << list + 3 << endl;
-     pointer = list + 3;
-     cout << *pointer;
-     // sumArr(list, size);
-     return 0;
-}
+     Time one = {10};
+     Time two = {20};
+     calculateTime(&one, &two);
+};
 
 // https://justdoitproject.tistory.com/31
