@@ -1,17 +1,4 @@
-#include <iostream>
-using namespace std;
-int main()
-{
-    int userNum;
-    cout << "Please enter a number -->: ";
-    cin >> userNum;
-
-    if (userNum >= 1 && userNum <= 100)
-    {
-        cout << "OK" << endl;
-    }
-    else
-    {
-        cout << "OUT OF RANGE" << endl;
-    }
-}
+cout << " |"
+        //      << "3: Check Prime Number" << endl;
+        // cout << " |"
+        //      << "4: Print Pattern" << endl;
