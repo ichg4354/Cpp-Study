@@ -155,16 +155,223 @@
 //     cout << sum;
 // }
 
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int number = 1;
+//     for (int i = 0; i < 50; i++)
+//     {
+//         cout << number;
+//         number += 3;
+//         count++;
+//     }
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int number = 1;
+//     for (int i = 0; i < 50; i++)
+//     {
+//         cout << number;
+//         number += 3;
+//     }
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     string number;
+
+//     cin >> number;
+//     int size = number.length();
+
+//     for (int i = size; i >= 0; i--)
+//     {
+//         cout << number[i];
+//     }
+//     cout << endl;
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int height;
+//     cin >> height;
+//     int count = 1;
+
+//     while (height >= (count * 2) - 1)
+//     {
+//         if (count < height)
+//         {
+//             for (int i = 1; i < height; i++)
+//             {
+//                 cout << ' ';
+//                 count++;
+//             }
+//             cout << "*" << endl;
+//             count++;
+//         }
+//         else if (count >= height)
+//         {
+//             for (int i = 1; i < height; i++)
+//             {
+//                 cout << ' ';
+//                 count++;
+//             }
+//             cout << "*" << endl;
+//             count++;
+//         }
+//     }
+// }
+
+// #include <iostream>
+// #include <iomanip>
+// using namespace std;
+
+// int main()
+// {
+//     int row = 0;
+//     int height;
+//     cin >> height;
+//     while (row < height)
+//     {
+//         int count = 0;
+
+//         for (int i = height; i > row; i--)
+//         {
+//             cout << "#";
+//         };
+
+//         while (count < 2 * row + 1)
+//         {
+//             cout << "*";
+//             count++;
+//         }
+
+//         cout << endl;
+//         row++;
+//     }
+// }
+
+// #####*
+// ####***
+// ###*****
+// ##*******
+// #*********
+
+// ###*
+// ##***
+// #*****
+
+// #include <iostream>
+// using namespace std;
+
+// int row = 0;
+// int height = 0;
+
+// int main()
+// {
+//     cin >> height;
+
+//     while (row < height - 1)
+//     {
+//         int count = 0;
+//         while (count < height - row - 1)
+//         {
+//             cout << " ";
+//             count++;
+//         };
+
+//         count = 0;
+//         while (count <= row)
+//         {
+//             cout << "*";
+//             count++;
+//         };
+//         cout << endl;
+//         row++;
+//     };
+
+//     row = 0;
+//     while (row < height)
+//     {
+//         int count = 0;
+//         while (count < row)
+//         {
+//             cout << " ";
+//             count++;
+//         };
+
+//         count = 0;
+//         while (count < height - row)
+//         {
+//             cout << "*";
+//             count++;
+//         };
+//         cout << endl;
+//         row++;
+//     };
+// }
+
+//         7개
+// ######*     1
+// #####**     2
+// ####***     3
+// ###****     4
+// ##*****     5
+// #******     6
+
+// *******     7
+// #******     8
+// ##*****     9
+// ###****     10
+// ####***     11
+// #####**     12
+// ######*     13
+
 #include <iostream>
 using namespace std;
 
+long double value1 = 1;
+long double value2;
+
+bool checkBool = true;
+
+float factorial(int n)
+{
+    float sum = 1;
+    for (int i = n; i >= 1; i--)
+    {
+        sum *= i;
+    };
+    return sum;
+}
+
 int main()
 {
-    int number = 1;
-    for (int i = 0; i < 50; i++)
+    int count = 1;
+
+    while (checkBool)
     {
-        cout << number;
-        number += 3;
+        value2 = value1 + 1 / factorial(count);
         count++;
+
+        if (value2 - value1 <= 0.000001)
+        {
+            checkBool = false;
+            cout << value2 - value1 << endl;
+            cout << count + 1;
+        };
+
+        value1 = value2;
     }
 }
