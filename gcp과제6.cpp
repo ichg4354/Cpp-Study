@@ -1,5 +1,5 @@
-// #include <iostream>
 // #include <cstdlib>
+// #include <iostream>
 // #include <ctime>
 
 // int main()
@@ -412,20 +412,86 @@
 //     permutation(5, 3);
 // }
 
-#include <iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
 
-void calculate()
-{
-    double a, b, c;
-    cin >> a >> b >> c;
-    cout << endl;
-    cout << "Calculating the soultion of: " << (a != 0 ? string(a) :) << (a != 0 ? "x^2 + " : " ");
-    cout << b << (b != 0 ? "x + " : " ");
-    cout << c << endl;
-}
+// void calculate()
+// {
+//     double a, b, c;
+//     cin >> a >> b >> c;
+//     cout << endl;
+//     cout << "Calculating the soultion of: " << a << "x^2"
+//          << " + " << b << 'x' << " + " << c << endl;
+//     int quadratic = pow(b, 2) - 4 * a * c;
+//     if (a == 0 && b == 0)
+//     {
+//         cout << "not a valid equasion" << endl;
+//     }
+//     else if (a == 0 && b != 0)
+//     {
+//         cout << -c / b << endl;
+//     }
+//     else if (quadratic < 0)
+//     {
+//         cout << "not a real solution" << endl;
+//     }
+//     else if (quadratic >= 0)
+//     {
+//         int value1 = (-b + sqrt(quadratic)) / (2 * a);
+//         int value2 = (-b - sqrt(quadratic)) / (2 * a);
+//         if (value1 == value2)
+//         {
+//             cout << "value: " << value1 << endl;
+//         }
+//         else
+//         {
+//             cout << " value1: " << value1 << " value2: " << value2 << endl;
+//         }
+//     }
+// }
+
+// int main()
+// {
+//     calculate();
+// }
+
+#include <iostream> 
+#include <cmath>
 
 int main()
 {
-    calculate();
+
+    // Location of orbiting point is (x,y)
+    double x; // These values change as the
+    double y; // satellite moves
+    const double PI = 3.14159;
+
+    // Location of fixed point is always (100, 0), // AKA (p_x, p_y). Change these as necessary.
+    const double p_x = 100;
+    const double p_y = 0;
+
+    // Radians in 10 degrees
+    const double radians = 10 * PI / 180;
+
+    // Precompute the cosine and sine of 10 degrees
+    const double COS10 = cos(radians);
+    const double SIN10 = sin(radians);
+
+    // Get starting point from user
+    std::cout << "Enter initial satellite coordinates (x,y):";
+    std::cin >> x >> y;
+
+    // Compute the initial distance
+    double d1 = sqrt((p_x - x) * (p_x - x) + (p_y - y) * (p_y - y));
+
+    // Let the satellite orbit 10 degrees
+    double x_old = x;
+    x = x * COS10 - y * SIN10;
+    y = x_old * SIN10 + y * COS10;
+
+    // Compute the new distance
+    double d2 = sqrt((p_x - x) * (p_x - x) + (p_y - y) * (p_y - y));
+
+    // Print the difference in the distances
+    std::cout << "Difference in distances: " << d2 - d1 << '\n';
 }
