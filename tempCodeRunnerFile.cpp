@@ -1,4 +1,3 @@
-   // if (primeCheck(ranNum))
-        // {
-        //     primeCount++;
-        // }
+
+
+int main()
