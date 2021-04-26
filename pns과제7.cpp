@@ -187,12 +187,44 @@
 //     return largestFactor;
 // }
 
+// #include <iostream>
+// using namespace std;
+
+// void get_range(int &min, int &max)
+// {
+//     int lower, upper;
+//     std::cout << "Please enter a data range within the bounds " << min << "..." << max << ": ";
+//     do
+//     { // Loop until acceptable values are provided
+//         std::cin >> lower >> upper;
+//         if (lower < min)
+//             std::cout << lower << " is too low, please try again.\n";
+//         if (upper > max)
+//             std::cout << upper << " is too high, please try again.\n";
+
+//     } while (lower < min || upper > max);
+// }
+
+// void bab(int &a)
+// {
+//     a = 5;
+//     cout << a;
+// }
+
+// int main()
+// {
+//     int b = 5;
+//     bab(b);
+//     cout << b;
+// }
+
 #include <iostream>
 using namespace std;
 
-void get_range(int &min, int &max)
+void get_range(int min, int max, int &lower, int &upper)
 {
-    int lower, upper;
+    lower = 3;
+    upper = 5;
     std::cout << "Please enter a data range within the bounds " << min << "..." << max << ": ";
     do
     { // Loop until acceptable values are provided
@@ -205,17 +237,11 @@ void get_range(int &min, int &max)
     } while (lower < min || upper > max);
 }
 
-void bab(int &a)
-{
-    a = 5;
-    cout << a;
-}
-
 int main()
 {
-    int b = 5;
-    bab(b);
-    cout << b;
+    int lower = 0;
+    int upper = 1;
+    get_range(10, 20, lower, upper);
 }
 
 //addres vs pointer vs reference
