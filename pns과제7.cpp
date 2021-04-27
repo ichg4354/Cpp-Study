@@ -218,30 +218,69 @@
 //     cout << b;
 // }
 
+// #include <iostream>
+// using namespace std;
+
+// void get_range(int min, int max, int &lower, int &upper)
+// {
+//     lower = 3;
+//     upper = 5;
+//     std::cout << "Please enter a data range within the bounds " << min << "..." << max << ": ";
+//     do
+//     { // Loop until acceptable values are provided
+//         std::cin >> lower >> upper;
+//         if (lower < min)
+//             std::cout << lower << " is too low, please try again.\n";
+//         if (upper > max)
+//             std::cout << upper << " is too high, please try again.\n";
+
+//     } while (lower < min || upper > max);
+// }
+
+// int main()
+// {
+//     int lower = 0;
+//     int upper = 1;
+//     get_range(10, 20, lower, upper);
+// }
+
+// #include <iostream>
+// using namespace std;
+// void Hanoi(int m, char start, char middle, char end)
+// {
+//     if (m == 1)
+//     {
+//         std::cout << "Move disc " << m << " from " << start << " to " << end
+//                   << std::endl;
+//     }
+//     else
+//     {
+//         Hanoi(m - 1, start, end, middle);
+//         std::cout << "Move disc " << m << " from " << start << " to " << end
+//                   << std::endl;
+//         Hanoi(m - 1, middle, start, end);
+//     }
+// }
+// int main()
+// {
+//     bool a = true;
+//     cout << a < endl;
+
+//     // int discs = 3;
+//     // Hanoi(discs, 'A', 'B', 'C');
+// }
+
 #include <iostream>
 using namespace std;
-
-void get_range(int min, int max, int &lower, int &upper)
-{
-    lower = 3;
-    upper = 5;
-    std::cout << "Please enter a data range within the bounds " << min << "..." << max << ": ";
-    do
-    { // Loop until acceptable values are provided
-        std::cin >> lower >> upper;
-        if (lower < min)
-            std::cout << lower << " is too low, please try again.\n";
-        if (upper > max)
-            std::cout << upper << " is too high, please try again.\n";
-
-    } while (lower < min || upper > max);
-}
-
+asf
 int main()
 {
-    int lower = 0;
-    int upper = 1;
-    get_range(10, 20, lower, upper);
+    int a = 1;
+    int b = 2;
+    int c = 1;
+    int d = 2;
+    cout << a << endl;
+    a = b++;
 }
 
 //addres vs pointer vs reference
