@@ -182,21 +182,39 @@
 //     printMinMax(2, 5, 7, -5, -5);
 // }
 
+// #include <iostream>
+// using namespace std;
+
+// struct Box
+// {
+//     int age;
+//     int height;
+// };
+
+// int main()
+// {
+//     Box Fuck(int a)
+//     {
+//         cout << "FUCK YOU" << a << "TIMES" << endl;
+//     }
+
+//     Fuck(3);
+// }
+
 #include <iostream>
 using namespace std;
-
-struct Box
+void gcd(int num1, int num2)
 {
-    int age;
-    int height;
-};
-
+    int min = (num1 < num2) ? num1 : num2;
+    int answer = 1;
+    for (int i = 1; i <= min; i++)
+    {
+        if (num1 % i == 0 && num2 % i == 0)
+            answer = i;
+    }
+    cout << answer << endl;
+}
 int main()
 {
-    Box Fuck(int a)
-    {
-        cout << "FUCK YOU" << a << "TIMES" << endl;
-    }
-
-    Fuck(3);
+    gcd(10, 20);
 }
