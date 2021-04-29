@@ -2,11 +2,8 @@
 #include <iomanip>
 using namespace std;
 
-void answer1()
+void answer1(int a, int b, int c)
 {
-    int a, b, c;
-    cout << "세개의 정수를 입력하라 -->";
-    cin >> a >> b >> c;
 
     if (a > b)
     {
@@ -70,29 +67,47 @@ void answer2()
 
 void answer3(int n)
 {
-    cout << '\t';
-    for (int a = 0; a < n; a++)
-    {
-        cout << '*';
-    }
-    cout << '\n';
-    for (int x = 1; x < n / 2; x++)
+    int size;
+    cout << "도형의 크기 입력 -->";
+    cin >> size;
+
+    int last = size - 1;
+    for (int i = 0; i < size; i++)
     {
         cout << '\t';
-        cout << '#';
-        for (int y = 0; y < n - 2; y++)
+        for (int z = 0; z < size; z++)
         {
+
+            if (i == 0 || z == 0 || i == last || z == last)
+            {
+                cout << "*";
+            }
+            else if (i == z)
+            {
+                cout << "*";
+            }
+            else if (z == last - i)
+            {
+                cout << "*";
+            }
+            else
+            {
+                cout << " ";
+            }
         }
-        cout << '#';
-        cout << "\n";
+        cout << '\n';
     }
-    cout << '\t';
-    for (int a = 0; a < n; a++)
-    {
-        cout << '*';
-    }
-    cout << '\n';
 }
+// ********
+// *######*
+// #******#
+// ##****##
+// ###**###
+// ###**###
+// ##****##
+// #******#
+// *######*
+// ********
 void DisplayBottom()
 {
     cout << '\t';
@@ -114,7 +129,7 @@ void DisplayARow(int num, string name, int mid, int fnl)
          << " |" << endl;
 }
 
-void GetRecord(int min, int max)
+void GetRecord()
 {
 
     int mid1, fnl1, mid2, fnl2, mid3, fnl3;
@@ -189,13 +204,24 @@ void Play()
     cout << "최종 " << Winner << " 승리" << endl;
 }
 
+void testAnswer()
+{
+    cout << '*' << setw(50) << setfill('-') << '-' << '*' << endl;
+    cout << "| " << setw(10) << setfill(' ') << "최민석";
+    cout << "| " << setw(10) << setfill(' ') << 1 << '|';
+    cout << "| " << setw(10) << setfill(' ') << 1 << 355;
+    cout << "| " << setw(10) << setfill(' ') << 1 << 32.23 << "|" << endl;
+}
+
 int main()
 {
     // GetScore(1000, 9999);
-    Play();
+    // Play();
+    // GetRecord();
+    // answer3(10);
+    testAnswer();
 }
-// **********
-
+// ********
 // *######*
 // #******#
 // ##****##
@@ -204,5 +230,4 @@ int main()
 // ##****##
 // #******#
 // *######*
-
-// **********
+// ********
