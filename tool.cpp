@@ -1,14 +1,16 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
-void calculateRisePercentage(int begin, int later)
+void DrawLine()
 {
-    float difference = later - begin;
-    float percentage = difference / begin * 100.;
-    cout << begin << "-->" << later << " : " << percentage << '%' << endl;
 }
-
 int main()
 {
-    calculateRisePercentage(5474,5551);
+    srand(time(NULL));
+    cout
+        << rand() % 100 << endl;
+    cout << rand() % 100 << endl;
+    cout << rand() % 100 << endl;
+    cout << rand() % 100 << endl;
 }

@@ -3,34 +3,20 @@
 
 using namespace std;
 
-vector<int> list = {1,2,3,4,5};
+vector<int> list = {1,2,3,4,5,5};
 
-bool balanced(const vector<int> &list)
+bool is_ascending(std::vector<int> &list)
 {
-    vector<int> even;
-    vector<int> odd;
-    for (int each : list)
+    for (int i = 0; i < list.size() - 1; i++)
     {
-        if (each % 2 == 0)
+        if (list[i] > list[i + 1])
         {
-            even.push_back(each);
-        }
-        else
-        {
-            odd.push_back(each);
+            return 0;
         }
     }
-    if (even.size() == odd.size())
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
+    return 1;
 }
-
 int main()
 {
-    cout << balanced(list) << endl;
+    cout << is_ascending(list) << endl;
 }
