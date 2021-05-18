@@ -1,2 +1,2 @@
-Quit"
-          << "|\n";
+    // Stock bullShit;
+    // bullShit.showTotalValue();

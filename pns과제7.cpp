@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 using namespace std;
 int WIDTH = 45;
 int NUM_OF_COMMAND = 6;
@@ -11,6 +12,8 @@ int fnl[10], mid[10];
 int par[10], hw[10];
 char grade[10];
 double avrg[10];
+int maxScores[] = {20, 100, 100, 100};
+double weights[] = {0.05, 0.3, 0.3, 0.35};
 
 void drawLine()
 {
@@ -81,7 +84,11 @@ int getCommand()
           << "|\n";
      cout << "\t| " << left << setfill(' ') << setw(WIDTH + 13) << "4. 성적 포함 학생정보 화면 출력"
           << "|\n";
-     cout << "\t| " << left << setfill(' ') << setw(WIDTH + 15) << "5. 성적 포함 학생정보 형식화된 출력"
+     cout << "\t| " << left << setfill(' ') << setw(WIDTH + 15) << "5. 성적 포함 학생정보 형식화된 입력"
+          << "|\n";
+     cout << "\t| " << left << setfill(' ') << setw(WIDTH + 15) << "6. 성적 포함 학생정보 형식화된 출력"
+          << "|\n";
+     cout << "\t| " << left << setfill(' ') << setw(WIDTH + 14) << "7. 처리된 성적 테이블로 파일 출력"
           << "|\n";
      drawLine();
 
@@ -96,10 +103,10 @@ void CalculateGrade(int num)
      int weightedSum = 0;
      for (int i = 0; i < num; i++)
      {
-          weightedSum += par[i] * 0.05;
-          weightedSum += hw[i] * 0.35;
-          weightedSum += mid[i] * 0.25;
-          weightedSum += fnl[i] * 0.35;
+          weightedSum += par[i] * weights[0];
+          weightedSum += hw[i] * weights[1];
+          weightedSum += mid[i] * weights[2];
+          weightedSum += fnl[i] * weights[3];
 
           if (weightedSum > 90)
           {
@@ -179,6 +186,51 @@ void DisplayClassInfo(int num, string title[], string name[], int mid[], int fnl
      DrawLine();
 }
 
+bool writeStudentScore(ofstream &inputStream, int n)
+{
+     for (int i = 0; i < n; i++)
+     {
+          inputStream << par[i] << " " << hw[i] << " " << mid[i] << " " << fnl[i] << endl;
+          cout << par[i] << " " << hw[i] << " " << mid[i] << " " << fnl[i] << endl;
+     }
+}
+
+void saveData()
+{
+     string title;
+     cout << "학생정보를 저장할 파일이름을 입력 ->";
+     cin >> title;
+
+     ofstream outputStream;
+
+     outputStream.open(title);
+     outputStream << maxScores[0] << " " << maxScores[1] << " " << maxScores[2] << " " << maxScores[3] << endl;
+     outputStream << weights[0] << " " << weights[1] << " " << weights[2] << " " << weights[3] << endl;
+
+     writeStudentScore(outputStream, 3);
+
+     outputStream.close();
+}
+
+bool readData()
+{
+     string title;
+     bool flag = true;
+
+     cout << "학생정보를 읽어들일 파일이름을 입력 ->";
+     cin >> title;
+
+     ifstream inputStream;
+
+     inputStream.open(title);
+
+     inputStream >> maxScores[0] >> maxScores[1] >> maxScores[2] >> maxScores[3];
+     if (!inputStream)
+     {
+          return 0;
+     }
+}
+
 int main()
 {
      srand(time(NULL));
@@ -207,6 +259,14 @@ int main()
                DisplayClassInfo(5, name, mid, fnl, avrg, par, hw, grade);
           }
           else if (input == 5)
+          {
+               saveData();
+          }
+          else if (input == 6)
+          {
+               readData();
+          }
+          else if (input == 7)
           {
                DisplayClassInfo(5, title, name, mid, fnl, avrg, par, hw, grade);
           }
