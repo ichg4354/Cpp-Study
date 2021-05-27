@@ -1,23 +1,39 @@
 #include <iostream>
 #include <vector>
+#include <stdio.h>
+#include <string>
 using namespace std;
 
-int list1[5] = {1, 2, 3, 4, 10};
-int count_negatives(int a[10][10])
+void ReadCsv(std::string FileName, std::vector<std::vector<std::string>> &Data)
 {
-    int sum = 0;
-    for (int i = 0; i < 10; i++)
+    std::ifstream ifs;
+
+    ifs.open(FileName);
+    if (!ifs.is_open())
+        return;
+
+    std::string LineString = "";
+    std::string Delimeter = ",";
+    while (getline(ifs, LineString))
     {
-        for (int a = 0; i < 10; a++)
+        std::vector<std::string> RowData;
+        unsigned int nPos = 0, nFindPos;
+        do
         {
-            if (a[i][a] < 0)
-            {
-                sum += a[i][a];
-            }
-        }
+            nFindPos = LineString.find(Delimeter, nPos);
+            if (nFindPos == std::string::npos)
+                nFindPos = LineString.length();
+
+            RowData.push_back(LineString.substr(nPos, nFindPos - nPos));
+            nPos = nFindPos + 1;
+        } while (nFindPos < LineString.length());
+        Data.push_back(RowData);
     }
+    ifs.close();
 }
+
 int main()
 {
-    count_negatives;
+    vector<vector<string>> value;
+    ReadCsv("diabeties.csv", value);
 }
