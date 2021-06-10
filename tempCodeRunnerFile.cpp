@@ -1,4 +1,8 @@
-    // SimpleRational test1 = SimpleRational(1, 2);
-    // SimpleRational test2 = SimpleRational(2, 5);
-    // SimpleRational test3;
-    // test3 = test1.add(test1, test2);
+ for (int i = 0; i < row; i++)
+    {
+        for (int a = 0; a < col; a++)
+        {
+            cout << box[i][a];
+        }
+        cout << endl;
+    }
