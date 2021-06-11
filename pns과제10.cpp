@@ -13,6 +13,7 @@ double avrg[10];
 int maxScores[] = {20, 100, 100, 100};
 double weights[] = {0.05, 0.3, 0.3, 0.35};
 
+//학생 Stuct
 struct Student
 {
     string name;
@@ -22,11 +23,13 @@ struct Student
     int hw;
 };
 
+//줄 그리는 함수
 void drawLine()
 {
     cout << '\t' << setw(WIDTH + 4) << setfill('=') << '=' << endl;
 }
 
+// 학생들 이름을 저장하고 랜덤 mid, fnl, par, hw 값을 지정하는 함수
 void GetClassInfo(int num, Student *StudentList)
 {
     for (int i = 0; i < num; i++)
@@ -40,10 +43,13 @@ void GetClassInfo(int num, Student *StudentList)
     }
 }
 
+// 학생 정보를 보여주는 함수
 void DisplayStudentInfo(int num, string name, int mid, int fnl, int par, int hw)
 {
     cout << num << ": " << name << "  " << mid << "  " << fnl << "  " << par << "  " << hw << "  " << endl;
 }
+
+// 학생들 정보를 가져와 DisplayStudentInfo 함수에 전달하는 함수
 void DisplayClassInfo(int num, Student *StudentList)
 {
     cout << num << endl;
@@ -52,6 +58,8 @@ void DisplayClassInfo(int num, Student *StudentList)
         DisplayStudentInfo(i, (StudentList + i)->name, (StudentList + i)->mid, (StudentList + i)->fnl, (StudentList + i)->par, (StudentList + i)->hw);
     }
 }
+
+// 모든 학생 정보를 출력하는 함수
 void DisplayStudentInfo(int num, string name, int mid, int fnl, double avrg, int par, int hw, char grade)
 {
     cout << num << ": "
@@ -65,6 +73,7 @@ void DisplayStudentInfo(int num, string name, int mid, int fnl, double avrg, int
          << endl;
 }
 
+// 오버라이딩 해서 avrg grade를 모두 받을 수 있는 함수
 void DisplayClassInfo(int num, Student *StudentList, double avrg[], char grade[])
 {
     for (int i = 0; i < num; i++)
@@ -72,6 +81,8 @@ void DisplayClassInfo(int num, Student *StudentList, double avrg[], char grade[]
         DisplayStudentInfo(i, (StudentList + i)->name, (StudentList + i)->mid, (StudentList + i)->fnl, avrg[i], (StudentList + i)->par, (StudentList + i)->hw, grade[i]);
     }
 }
+
+// 학생의 평균 점수를 계산한 후 avrg[]에 저장하는 함수
 void Average(int num, double average[], Student *StudentList)
 {
     for (int i = 0; i < num; i++)
@@ -79,6 +90,8 @@ void Average(int num, double average[], Student *StudentList)
         average[i] = ((StudentList + i)->mid + (StudentList + i)->fnl) / 2.0;
     }
 }
+
+// 모든 실행할 수 있는 프로그램 보여주는 함수
 int getCommand()
 {
     int inputR;
@@ -119,6 +132,7 @@ int getCommand()
     return inputR;
 }
 
+// 학생 학점을 계산하는 함수
 void CalculateGrade(int num, char grade[], Student *StudentList)
 {
     int weightedSum = 0;
@@ -158,12 +172,15 @@ void CalculateGrade(int num, char grade[], Student *StudentList)
 
 int SMALLWIDTH = 10;
 
+// 줄을 그리는 함수
 void DrawLine()
 {
     cout << "\t"
          << "*" << setw(SMALLWIDTH * 8 - 4) << setfill('-') << "-"
          << "*" << endl;
 }
+
+// title[]내부에 있는 title 각각 출력하는 함수
 void DisplayTitle(string title[])
 {
     DrawLine();
@@ -178,6 +195,8 @@ void DisplayTitle(string title[])
          << "| " << endl;
     DrawLine();
 }
+
+// 오버라이딩 해 학생 average grade 모두 출력할 수 있는 함수
 void DisplayStudentInfo(double flag, int num, string name, int mid, int fnl, double average, int par, int hw, char grade)
 {
     cout << "\t|" << right << setfill(' ') << setw(SMALLWIDTH - 2) << num
@@ -192,7 +211,7 @@ void DisplayStudentInfo(double flag, int num, string name, int mid, int fnl, dou
          << "| "
          << endl;
 }
-
+// 오버라이딩 해 DisplayStudentInfo에 avrg grade까지 전달할 수 있는 함수
 void DisplayClassInfo(int num, double flag, Student *StudentList, double avrg[], char grade[])
 {
     DisplayTitle(title);
@@ -203,12 +222,14 @@ void DisplayClassInfo(int num, double flag, Student *StudentList, double avrg[],
     DrawLine();
 }
 
-bool writeStudentScore(ofstream &inputStream, string name, int mid, int fnl, int par, int hw)
+// 학생의 정보를 출력하는 함수
+bool writeStudentScore(ofstream &outputStream, string name, int mid, int fnl, int par, int hw)
 {
-    inputStream << name << " " << par << " " << hw << " " << mid << " " << fnl << endl;
+    outputStream << name << " " << par << " " << hw << " " << mid << " " << fnl << endl;
     cout << name << " " << par << " " << hw << " " << mid << " " << fnl << endl;
 }
 
+// 학생의 정보를 외부 파일로 전달하는 함수.
 void fileWrite(int num, double rate[], int maxScore[], Student *StudentList)
 {
     string title;
@@ -228,7 +249,7 @@ void fileWrite(int num, double rate[], int maxScore[], Student *StudentList)
 
     outputStream.close();
 }
-
+// 학생의 정보를 외부에서 가져와 출력하는 함수
 bool getScore(ifstream &inputStream, string &name, int &mid, int &fnl, int &par, int &hw)
 {
     inputStream >> name >> mid >> fnl >> par >> hw;
@@ -240,7 +261,7 @@ bool getScore(ifstream &inputStream, string &name, int &mid, int &fnl, int &par,
         return true;
     }
 }
-
+// 학생 정보를 외부에서 읽어들이는 함수
 bool fileRead(double rate[], int maxScore[], Student *StudentList)
 {
     string title;
@@ -264,7 +285,7 @@ bool fileRead(double rate[], int maxScore[], Student *StudentList)
         num++;
     }
 }
-
+// 학생 이름에 맞는 학생 인덱스를 리턴하는 함수
 int getIndexByName(int num, Student studentList[], string searchKey)
 {
     for (int i = 0; i < num; i++)
@@ -276,7 +297,7 @@ int getIndexByName(int num, Student studentList[], string searchKey)
     }
     return -1;
 }
-
+// 학생 인덱스를 사용해, 학생 정보를 출력하는 함수
 void SearchNDisplay(Student *StudentList)
 {
     string nameKey;
@@ -296,7 +317,7 @@ void SearchNDisplay(Student *StudentList)
         cout << "존재하지 않는 학생입니다." << endl;
     }
 }
-
+// 학생을 추가하는 함수
 void AddStudent(int &num, Student *StudentList)
 {
     if (num > MAX_SIZE - 1)
@@ -315,7 +336,7 @@ void AddStudent(int &num, Student *StudentList)
         cout << num;
     }
 };
-
+// 학생을 없애는 함수
 void RemoveStudent(int &num, Student *StudentList)
 {
     string delStudentName;
@@ -328,10 +349,12 @@ void RemoveStudent(int &num, Student *StudentList)
     }
     num--;
 };
-
+// 낙제한 학생 수를 출력하는 함수
 void findFailedStudentCount(char grade[])
 {
+    // 낙제한 학생 수 기록하는 변수
     int count = 0;
+    // for문을 돌아 F, E, D학점을 맞은 학생들을 찾고 count에 1을 추가해줌
     for (int i = 0; i < 5; i++)
     {
         if (grade[i] == 'F' || grade[i] == 'E' || grade[i] == 'D')
@@ -339,6 +362,7 @@ void findFailedStudentCount(char grade[])
             count++;
         }
     }
+    // 낙제한 학생 수 출력
     cout << "낙제한 학생은 " << count << " 명 입니다" << endl;
 };
 
