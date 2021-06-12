@@ -9,56 +9,53 @@ struct Person
     int salary;
 };
 
-int ReadData(Person master[], int num)
+int num = 0;
+
+int ReadData(Person master[], int &num)
 {
-    string title = "text.txt";
+    ifstream InputStream;
 
-    ifstream inputStream;
+    InputStream.open("text.txt");
 
-    inputStream.open(title);
-
-    char value;
+    bool flag = true;
 
     int count = 0;
-
-    if (!inputStream)
+    if (!InputStream)
     {
         return 0;
     }
     else
     {
-        while (count != num)
+        while (!InputStream.eof())
         {
-            inputStream >> master[count].name >> master[count].position >> master[count].salary;
+            InputStream >> master[count].name >> master[count].position >> master[count].salary;
             count++;
         }
     }
+    num = count;
     return 1;
 };
 
-void PrintPerson(Person master[], int num)
+void PrintPersonData(Person master[], int index)
 {
-    cout << " 사 번" << num
-         << "   직원명:"
-         << setw(15) << master[num].name
-         << "   근무처:"
-         << setw(20) << master[num].position
-         << "   연봉:"
-         << setw(15) << master[num].salary
+    cout << "사번 " << index << "  "
+         << "   직원명:  " << setw(10) << master[index].name
+         << "   근무처:  " << setw(15) << master[index].position
+         << "   연봉:  " << setw(15) << master[index].salary
          << endl;
-}
+};
 
 void DisplayStructData(Person master[], int num)
 {
     for (int i = 0; i < num; i++)
     {
-        PrintPerson(master, i);
+        PrintPersonData(master, i);
     }
-};
+}
 
 void Select(Person master[], int num)
 {
-    int sum = 0;
+    int sum;
     for (int i = 0; i < num; i++)
     {
         sum += master[i].salary;
@@ -66,44 +63,47 @@ void Select(Person master[], int num)
 
     int average = sum / num;
 
-    cout << "   평균연봉: " << average << endl;
+    cout << "평균연봉: " << average << endl;
 
     for (int i = 0; i < num; i++)
     {
         if (master[i].salary > average)
         {
-            PrintPerson(master, i);
+            PrintPersonData(master, i);
         }
     }
-};
+    cout << endl;
+}
 
 void FindStruct(Person master[], int num)
 {
     string inputName;
     string inputPosition;
+    cout << "직원명과 근무처를 입력하세요 -->";
+    cin >> inputName >> inputPosition;
 
     int count = 0;
-
-    cout << "직원이름과 근무처를 입력하세요 -->";
-    cin >> inputName >> inputPosition;
 
     for (int i = 0; i < num; i++)
     {
         if (master[i].name == inputName && master[i].position == inputPosition)
         {
-            PrintPerson(master, i);
+            PrintPersonData(master, i);
             count++;
         }
     }
+
     if (count == 0)
     {
-        cout << inputName << "  입력된 직원이 존재하지 않음" << endl;
+        cout << inputName << " "
+             << "입력된 직원이 존재하지 않음" << endl;
     }
-};
+}
 int main()
 {
-    Person PersonList[100];
-    ReadData(PersonList, 5);
-    // Select(PersonList, 5);
-    FindStruct(PersonList, 5);
+    Person List[10];
+    ReadData(List, num);
+    // DisplayStructData(List, num);
+    // Select(List, num);
+    FindStruct(List, num);
 }
