@@ -219,6 +219,8 @@ Book *ReadAllRecordsFrFile(int *num)
 
     cout << ptr[0].title << endl;
 
+    InputStream.close();
+
     return ptr;
 };
 
@@ -263,3 +265,13 @@ int main()
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
