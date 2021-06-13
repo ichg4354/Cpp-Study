@@ -1,8 +1,13 @@
- for (int i = 0; i < row; i++)
-    {
-        for (int a = 0; a < col; a++)
-        {
-            cout << box[i][a];
-        }
-        cout << endl;
-    }
+ cout << "*********"
+         << "문제 1 : 상품정보 입력 및 출력 "
+         << "*********" << endl;
+    inputData(name, price, quant);
+
+    cout << "*********"
+         << "문제 2 : 함수 overloading을 이용한 "
+         << "*********" << endl;
+    GetData(name);
+    GetData(price);
+    GetData(quant);
+
+    DisplayData(name, price, quant);
