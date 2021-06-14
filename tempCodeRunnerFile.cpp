@@ -1,13 +1,9 @@
- cout << "*********"
-         << "문제 1 : 상품정보 입력 및 출력 "
-         << "*********" << endl;
-    inputData(name, price, quant);
-
-    cout << "*********"
-         << "문제 2 : 함수 overloading을 이용한 "
-         << "*********" << endl;
-    GetData(name);
-    GetData(price);
-    GetData(quant);
-
-    DisplayData(name, price, quant);
+ for (int i = 0; i < r; i++)
+    {
+        for (int a = 0; a < c; a++)
+        {
+            cout << *(arrPtr[i] + a) << " ";
+            cout << setw(5) << (arrPtr[i] + a) << " ";
+        }
+        cout << endl;
+    }
