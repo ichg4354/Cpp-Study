@@ -1,35 +1,41 @@
 {
+  // tasks.json 형식에 대한 설명서는
+  // https://go.microsoft.com/fwlink/?LinkId=733558의 내용을 참조하세요.
   "version": "2.0.0",
   "tasks": [
     {
       "type": "shell",
-      "label": "C/C++: g++ build active file",
-      "command": "/usr/bin/g++",
+      "label": "cpp build active file",
+      "command": "/usr/bin/cpp",
       "args": [
-        "-std=c++17", // 2020.08.05 추가
-        "-stdlib=libc++", // 2020.08.05 추가
         "-g",
         "${file}",
         "-o",
-        //수정
-        "${fileDirname}/${fileBasenameNoExtension}.out",
-
-        //추가
-        // 1. execute .out file
-        "&&", //to join building and running of the file
         "${fileDirname}/${fileBasenameNoExtension}.out"
       ],
       "options": {
-        "cwd": "${workspaceFolder}"
+        "cwd": "/usr/bin"
       },
       "problemMatcher": ["$gcc"],
-      // 수정
+      "group": "build"
+    },
+    {
+      "type": "shell",
+      "label": "g++ build active file",
+      "command": "g++",
+      "args": [
+        "-g",
+        "${file}",
+        "-std=c++11",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}.out"
+      ],
+      "problemMatcher": ["$gcc"],
       "group": {
         "kind": "build",
         "isDefault": true
       }
     },
-    //실행 파일 추가
     {
       "label": "exec",
       "type": "shell",
@@ -37,7 +43,8 @@
       "group": {
         "kind": "build",
         "isDefault": true
-      }
+      },
+      "problemMatcher": ["$gcc"]
     }
   ]
 }
